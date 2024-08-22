@@ -15,15 +15,18 @@ variable "zone" {
   default     = "us-central1-a"
 }
 
+
 variable "machine_type" {
   type        = string
   description = "Machine Type"
   default     = "e2-micro"
 }
 
-variable "subnet" {
-  type = map(object({
-    cidr_block = string  
-    region = string 
-  }))
+variable "cidr" {
+  type = string
+  description = "IP cidr range"
 }
+
+variable "network_name" {
+  type        = string
+  description = "The name of the network."
